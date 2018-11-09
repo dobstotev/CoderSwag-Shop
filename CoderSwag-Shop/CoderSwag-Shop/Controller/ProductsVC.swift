@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ProductsVC: UIViewController {
+class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    @IBOutlet weak var productsCollections: UICollectionView!
     
     //We need an empty array here. For example if the data is not loaded yet, and the collection is looking for an item the whole app will crash
     private(set) public var products = [Product]()
@@ -16,11 +18,30 @@ class ProductsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        productsCollections.dataSource = self
+        productsCollections.delegate = self
     }
     
+    // Initializing products and passing the category data from Categories into the istance of products
     func initProducts(category: Category) {
         products = DataService.instance.getProducts(forCategoryTitle: category.title)
+    }
+    
+    
+    // Getting the exact number of products for the collection cells
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCell {
+            let product = products[indexPath.row]
+            cell.updateViews(product: product)
+            return cell
+        } else {
+            return ProductCell()
+        }
     }
 
 }
