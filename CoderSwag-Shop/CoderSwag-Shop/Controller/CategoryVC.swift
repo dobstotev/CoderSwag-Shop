@@ -33,6 +33,7 @@ class CategoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Grabbing the table view, and we are going to make a reusable cell so that they replace the currently visible items instead of being hidden below the fold
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell {
                 let category = DataService.instance.getCategories()[indexPath.row]
+            // Calling the update views function and we are passing the category in it
                 cell.updateViews(category: category)
                 return cell
         } else {
