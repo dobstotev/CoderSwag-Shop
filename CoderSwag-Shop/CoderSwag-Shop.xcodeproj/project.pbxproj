@@ -13,6 +13,8 @@
 		131F4F8221957E7900642C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131F4F8121957E7900642C23 /* Assets.xcassets */; };
 		131F4F8521957E7900642C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131F4F8321957E7900642C23 /* LaunchScreen.storyboard */; };
 		131F4F912195831100642C23 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131F4F902195831100642C23 /* CategoryCell.swift */; };
+		131F4F932195863600642C23 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131F4F922195863600642C23 /* Category.swift */; };
+		131F4F95219586B800642C23 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131F4F94219586B800642C23 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		131F4F8421957E7900642C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131F4F8621957E7900642C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131F4F902195831100642C23 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		131F4F922195863600642C23 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		131F4F94219586B800642C23 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		131F4F8D219582AC00642C23 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				131F4F922195863600642C23 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 		131F4F8F219582B900642C23 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				131F4F94219586B800642C23 /* DataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 				131F4F7D21957E7900642C23 /* CategoryVC.swift in Sources */,
 				131F4F7B21957E7900642C23 /* AppDelegate.swift in Sources */,
 				131F4F912195831100642C23 /* CategoryCell.swift in Sources */,
+				131F4F932195863600642C23 /* Category.swift in Sources */,
+				131F4F95219586B800642C23 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
