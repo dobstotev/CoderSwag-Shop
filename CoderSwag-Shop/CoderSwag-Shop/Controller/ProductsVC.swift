@@ -25,6 +25,9 @@ class ProductsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     // Initializing products and passing the category data from Categories into the istance of products
     func initProducts(category: Category) {
         products = DataService.instance.getProducts(forCategoryTitle: category.title)
+        
+        //Setting the new nav title on the products screen
+        navigationItem.title = category.title
     }
     
     
