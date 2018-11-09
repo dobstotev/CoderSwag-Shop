@@ -41,6 +41,20 @@ class CategoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
     }
+    
+    // When a category is tapped, we need to show another view controller
+    // Function that knows which category is tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = DataService.instance.getCategories()[indexPath.row]
+        performSegue(withIdentifier: "ProductsVC", sender: category)
+    }
+    
+    // setting up the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productVC = segue.destination as? ProductsVC {
+            productVC.initProducts(category: sender as! Category)
+        }
+    }
 
 
 }
